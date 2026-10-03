@@ -3,7 +3,11 @@
   "name": "Board Master",
   "version": "0.1.0",
   "description": "Chess & Gomoku hint assistant with auto-play support",
-  "permissions": ["activeTab", "storage", "scripting"],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
   "host_permissions": [
     "https://www.chess.com/*",
     "https://lichess.org/*",
@@ -33,34 +37,70 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.chess.com/*"],
-      "js": ["content/chess/chesscom-page.js"],
+      "matches": [
+        "https://www.chess.com/*"
+      ],
+      "js": [
+        "content/chess/chesscom-page.js"
+      ],
       "world": "MAIN",
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://www.chess.com/*"],
-      "js": ["content/chess/arrows.js", "content/chess/core.js", "content/chess/chesscom.js"]
+      "matches": [
+        "https://www.chess.com/*"
+      ],
+      "js": [
+        "content/chess/arrows.js",
+        "content/chess/core.js",
+        "content/chess/chesscom.js"
+      ]
     },
     {
-      "matches": ["https://lichess.org/*"],
-      "js": ["content/chess/arrows.js", "content/chess/core.js", "content/chess/lichess.js"]
+      "matches": [
+        "https://lichess.org/*"
+      ],
+      "js": [
+        "content/chess/arrows.js",
+        "content/chess/core.js",
+        "content/chess/lichess.js"
+      ],
+      "world": "MAIN"
     },
     {
-      "matches": ["https://www.playok.com/*"],
-      "js": ["content/chess/playok-chess.js"]
+      "matches": [
+        "https://www.playok.com/*"
+      ],
+      "js": [
+        "content/chess/playok-chess.js"
+      ]
     },
     {
-      "matches": ["https://www.playok.com/*", "https://www.xiangqi.com/*"],
-      "js": ["content/xiangqi.js"]
+      "matches": [
+        "https://www.playok.com/*",
+        "https://www.xiangqi.com/*"
+      ],
+      "js": [
+        "content/xiangqi.js"
+      ]
     },
     {
-      "matches": ["https://gomokuonline.com/*", "https://www.playok.com/*"],
-      "js": ["content/gomoku.js"]
+      "matches": [
+        "https://gomokuonline.com/*",
+        "https://www.playok.com/*"
+      ],
+      "js": [
+        "content/gomoku.js"
+      ]
     },
     {
-      "matches": ["*://*.facebook.com/*", "*://*.fbsbx.com/*"],
-      "js": ["content/gomoku.js"],
+      "matches": [
+        "*://*.facebook.com/*",
+        "*://*.fbsbx.com/*"
+      ],
+      "js": [
+        "content/gomoku.js"
+      ],
       "all_frames": true,
       "run_at": "document_idle"
     }
@@ -71,16 +111,22 @@
         "content/gomoku-playok-debug.js",
         "content/chess/playok-chess-debug.js"
       ],
-      "matches": ["https://www.playok.com/*"]
+      "matches": [
+        "https://www.playok.com/*"
+      ]
     }
   ],
   "commands": {
     "toggle-hints": {
-      "suggested_key": { "default": "Alt+H" },
+      "suggested_key": {
+        "default": "Alt+H"
+      },
       "description": "Toggle Hints"
     },
     "toggle-auto": {
-      "suggested_key": { "default": "Alt+A" },
+      "suggested_key": {
+        "default": "Alt+A"
+      },
       "description": "Toggle Auto Mode"
     }
   }
